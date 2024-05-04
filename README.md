@@ -32,9 +32,9 @@ This will run the development server at `http://localhost:5173/`.
 
 ## Folder Structure
 
-/src
-/components // Contains reusable React components
+/src<br>
+/components // Contains reusable React components<br>
 /features // Contains Redux slices (reducers, actions)
-/styles // Contains global styles or Tailwind CSS configurations
-App.jsx // Main component where routing is configured
-main.jsx // Entry point of the application
+/styles // Contains global styles or Tailwind CSS configurations<br>
+App.jsx // Main component where routing is configured<br>
+main.jsx // Entry point of the application<br>
