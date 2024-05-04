@@ -34,7 +34,7 @@ This will run the development server at `http://localhost:5173/`.
 
 /src<br>
 /components // Contains reusable React components<br>
-/features // Contains Redux slices (reducers, actions)
+/features // Contains Redux slices (reducers, actions)<br>
 /styles // Contains global styles or Tailwind CSS configurations<br>
 App.jsx // Main component where routing is configured<br>
 main.jsx // Entry point of the application<br>
