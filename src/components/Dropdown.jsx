@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { calculateTotalPrice } from '../features/counter/counterSlice';
+import { removeItemFromCart } from '../features/counter/counterSlice';
 
 const Dropdown = () => {
   const getdata = useSelector((state) => state.counter.carts);
@@ -28,6 +28,10 @@ const Dropdown = () => {
     Setweight(weight);
     calculateCourierCharge()// Recalculate courier charge after updating weight
     
+  };
+
+  const handleRemoveItem = (itemId) => {
+    dispatch(removeItemFromCart(itemId));
   };
   const calculateCourierCharge = () => {
     if (weight > 0) {
@@ -62,12 +66,14 @@ const Dropdown = () => {
                 <p>Price: Rs {item['Price($)']}</p>
                 <p>Quantity: {item['Weight(g)']}</p>
                 <p>total quantity: {item.qnty}</p>
+                <button onClick={() => handleRemoveItem(item.id)} className='bg-red-500 rounded-md p-1'>Delete</button>
                 <hr className='py-2'/>
               </li> 
             ))}
              <p className='text-center'>Total price:$ {price}</p>
              <p className='text-center'>Total weight:{weight}(g)</p>
              <p className='text-center'>Courier price:${charges}</p>
+            
           </ul>
         </div>
       ) :
