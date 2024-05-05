@@ -35,6 +35,9 @@ const cartSlice = createSlice({
         state.totalPrice -= removedItem.price * removedItem.qnty;
         state.carts = state.carts.filter(item => item.id !== itemId);
       }
+         state.totalPrice = state.carts.reduce((totalPrice, item) => totalPrice + (item["Price($)"] * item.qnty), 0);
+
+       console.log(state.totalPrice)//to calculate total after the deletion of item 
     },
     decreaseItemQuantity(state, action) {
       const { id } = action.payload;
